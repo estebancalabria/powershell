@@ -1,0 +1,88 @@
+**********************
+PowerShell transcript start
+Start time: 20231201055036
+Username: LAPTOP-SRG2U73H\esteb
+RunAs User: LAPTOP-SRG2U73H\esteb
+Configuration Name: 
+Machine: LAPTOP-SRG2U73H (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -WorkingDirectory ~
+Process ID: 2680
+PSVersion: 7.2.17
+PSEdition: Core
+GitCommitId: 7.2.17
+OS: Microsoft Windows 10.0.22621
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.17
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is comandos.txt
+PS C:\Cursos\Powershell\Senado\clase-cinco> Get-Module
+
+ModuleType Version    PreRelease Name                                ExportedCommands
+---------- -------    ---------- ----                                ----------------
+Manifest   7.0.0.0               Microsoft.PowerShell.Host           {Start-Transcript, Stop-Transcript}
+Manifest   7.0.0.0               Microsoft.PowerShell.Management     {Add-Content, Clear-Content, Clear-Item, Clear-ItemPr…
+Manifest   7.0.0.0               Microsoft.PowerShell.Utility        {Add-Member, Add-Type, Clear-Variable, Compare-Object…
+Script     2.1.0                 PSReadLine                          {Get-PSReadLineKeyHandler, Get-PSReadLineOption, Remo…
+
+PS C:\Cursos\Powershell\Senado\clase-cinco> $profile
+C:\Users\esteb\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
+PS C:\Cursos\Powershell\Senado\clase-cinco> Get-Module -All
+
+ModuleType Version    PreRelease Name                                ExportedCommands
+---------- -------    ---------- ----                                ----------------
+Binary     7.2.17.500            Microsoft.PowerShell.Commands.Mana… {Add-Content, Clear-Content, Clear-ItemProperty, Clea…
+Binary     7.2.17.500            Microsoft.PowerShell.Commands.Util… {Add-Member, Add-Type, Compare-Object, ConvertFrom-Sd…
+Binary     7.2.17.500            Microsoft.PowerShell.ConsoleHost    {Start-Transcript, Stop-Transcript}
+Manifest   7.0.0.0               Microsoft.PowerShell.Host           {Start-Transcript, Stop-Transcript}
+Manifest   7.0.0.0               Microsoft.PowerShell.Management     {Add-Content, Clear-Content, Clear-Item, Clear-ItemPr…
+Binary     2.1.0.0               Microsoft.PowerShell.PSReadLine2    {Get-PSReadLineOption, Set-PSReadLineOption, Set-PSRe…
+Manifest   7.0.0.0               Microsoft.PowerShell.Utility        {Add-Member, Add-Type, Clear-Variable, Compare-Object…
+Script     2.1.0                 PSReadLine                          {Get-PSReadLineKeyHandler, Get-PSReadLineOption, Remo…
+
+PS C:\Cursos\Powershell\Senado\clase-cinco> dir
+
+    Directory: C:\Cursos\Powershell\Senado\clase-cinco
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           12/1/2023  6:34 AM           2764 comandos.txt
+-a---          11/30/2023  8:59 AM           1517 Select-Table.ps1.old
+-a---           12/1/2023  6:27 AM           3472 SQLServer-Module.psm1
+
+PS C:\Cursos\Powershell\Senado\clase-cinco> Get-Az
+
+Get-Az: The term 'Get-Az' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Get-Az: The term 'Get-Az' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\Cursos\Powershell\Senado\clase-cinco> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Cursos\Powershell\Senado\clase-cinco> TerminatingError(TabExpansion2): "Cannot bind argument to parameter 'inputScript' because it is an empty string."
+PS C:\Cursos\Powershell\Senado\clase-cinco> Get-Command Get-AzureReservedIP
+PS C:\Cursos\Powershell\Senado\clase-cinco> TerminatingError(Import-Module): "Could not load type 'System.Management.Automation.PSSnapIn' from assembly 'System.Management.Automation, Version=7.2.17.500, Culture=neutral, PublicKeyToken=31bf3856ad364e35'."
+
+Import-Module: Could not load type 'System.Management.Automation.PSSnapIn' from assembly 'System.Management.Automation, Version=7.2.17.500, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Get-AzureReservedIP                                5.1.2      Azure
+
+PS C:\Cursos\Powershell\Senado\clase-cinco> (Get-Command Get-AzureReservedIP).ModuleName
+Azure
+PS C:\Cursos\Powershell\Senado\clase-cinco> Import-Module .\SQLServer-Module.psm1
+PS C:\Cursos\Powershell\Senado\clase-cinco> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS C:\Cursos\Powershell\Senado\clase-cinco> New-DatabaseRecord
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Cursos\Powershell\Senado\clase-cinco> New-DatabaseRecord -DatabaseName pep -Hostname dsd -UserName dsds -Password ds -TableName dsd -Data @{} 
+Se Insertan los datos
+PS C:\Cursos\Powershell\Senado\clase-cinco> New-DatabaseRecord
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+**********************
+PowerShell transcript end
+End time: 20231201071012
+**********************

@@ -1,0 +1,84 @@
+
+  Id     Duration CommandLine
+  --     -------- -----------
+   1        0.392 quser
+   2        0.008 # Select-Object  #Where-Object
+   3        0.017 cd..
+   4        0.035 Select-location ..
+   5        0.009 Set-location ..
+   6        0.009 Set-location '.\Cursos\Powershell\Senado\'
+   7        0.028 New-Item .\clase-dos\ -ItemType Directory
+   8        0.010 dir
+   9        0.010 Set-Location .\clase-dos\
+  10        0.033 Start-Transcript ./clase-dos-history.txt
+  11        0.007 dir
+  12        0.022 Get-Content .\clase-dos-history.txt
+  13        0.024 Get-Command New-Item
+  14        0.093 Get-Command  Microsoft.PowerShell.Management
+  15        0.112 Get-Command -Module  Microsoft.PowerShell.Management
+  16        0.037 Get-History
+  17        0.040 History
+  18        0.015 dir
+  19        0.048 Invoke-History -1
+  20        0.067 quser
+  21        0.052 dir
+  22        0.061 Get-History | Get-Memeber
+  23        0.059 Get-History | Get-Member
+  24        0.067 Get-History
+  25        0.065 get-history | select-object CommandLine
+  26        0.269 get-history | Format-List
+  27        0.021 get-history | ConvertTo-Json 
+  28        0.008 $historial = Get-History
+  29        0.077 $historial
+  30        2.767 $historial = ConvertTo-Json
+  31        0.008 $historial = ConvertTo-Json $historial
+  32        0.003 $historial
+  33        0.032 Get-History -Count 4
+  34        0.019 $fecha = Get-Date
+  35        0.029 $fecha
+  36        0.013 $fecha.DayOfWeek
+  37        0.026 $fecha.GetType()
+  38        0.015 if ($fecha -is [DateTime]) { `…
+  39        0.020 {…
+  40        0.518 Get-Process `…
+  41        0.672 Get-Process `…
+  42        0.048 Get-History -Count 25
+  43        0.009 (Get-Date -Format YYYY)
+  44        0.009 (Get-Date -Format "YYYY")
+  45        0.009 (Get-Date -Format "YY")
+  46        0.008 (Get-Date -Format "YY ")
+  47        0.008 (Get-Date -Format "yyyyy")
+  48        0.010 (Get-Date -Format "yyyy DDD")
+  49        0.010 (Get-Date -Format "yyyy DD")
+  50        0.009 (Get-Date -Format "yyyy ddd")
+  51        0.009 (Get-Date -Format "yyyy dddd")
+  52        0.025 (Get-Date -Format "yyyy dddd").GetType()
+  53        0.008 #Como hago para listar los "parches" (hotfix) que tengo instalados
+  54        0.427 Get-HotFix
+  55        0.008 #Quiero solo la descripcion y cuando lo instale
+  56        0.254 Get-HotFix | Select-Object Description,IntalledOn
+  57        0.239 Get-HotFix | Select-Object Description,InstalledOn
+  58        0.009 #Quiero que me muestre hace cuantos dias lo instale
+  59        0.288 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={Get-Date - $PSItem.Installe…
+  60        0.264 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={Get-Date - $_.InstalledOn}}
+  61        0.341 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={Get-Date - Get-Date}}
+  62        0.254 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={0}}
+  63        0.257 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={Get-Date}}
+  64        0.263 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={(Get-Date) - $_.InstalledOn…
+  65        0.249 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={(Get-Date) - $PSItem.Instal…
+  66        0.216 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={((Get-Date) - $PSItem.Insta…
+  67        0.250 Get-HotFix | Select-Object Description, @{Name="DiasInstalacion"; Expression={((Get-Date) - $PSItem.Insta…
+  68        0.010 #Como hago para saber la cantid de procesos que estan corriendo en mi odenador
+  69        0.012 (Get-Process).Count 
+  70        0.028 Get-Process | Measure-Object
+  71        0.022 Get-Process | Measure-Object | Select count
+  72        0.745 Get-Process 
+  73        0.558 Get-Process | Select ProcessName
+  74        0.218 Get-Process | Select ProcessName -Unique
+  75        0.027 Get-Process | Select ProcessName -Unique | Measure-Object
+  76        0.271 Get-Process | Select ProcessName -Unique | Sort-Object ProcessName
+  77        0.224 Get-Process | Select ProcessName -Unique | Sort-Object ProcessName -Descending
+  78        0.262 Get-Process | Select ProcessName -Unique | Sort-Object ProcessName -Descending
+  79        0.054 Get-History -Count 20
+  80        0.179 Get-History
+

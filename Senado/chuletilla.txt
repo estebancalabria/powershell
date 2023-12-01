@@ -1,0 +1,145 @@
+BIENVENIDOS A LA CLASE NUMERO 4
+
+Resumen
+
+Management
+   - Get-ChildItem  (ls, dir)
+   - New-Item 
+   - Get-Content
+   - Set-Location   (cd)
+   - Copy-Item      (Copy)
+   - Move-Item      (mv)
+   - Set-Item
+   - Get-Item
+   - Get-ItemProperty
+   - Set-Item
+   - Set-ItemProperty
+   - Remove-Item     (del)
+   - Test-Path
+
+PSDrives
+   - Env:
+   - Cert:
+   - HKCU: / HKLM:
+
+CIM / WMI
+   -Win32_Process ...
+   -Get-CimClass
+   -Get-CimInstance -ClassName 
+   -Get-WmiObject -Class Win32_Process | Format-Table
+
+ (Filtrado, Seleccion)
+   - Select-Object  [-distinct]
+        -Select-Object @{Name="..", Expression=".."}
+        -Select
+   - Where-Object
+        -Where {}
+   - Measure-Object
+   - ForEach-Object
+   - Get-Member
+   - Sort-Object
+   - Elemento Actual
+        - $PSItem
+        - $_
+   - Group-Object
+
+Operadores
+   -eq -ne -gt -gte -lt -lte -and -or 
+
+Variables
+   -$true $false $null
+
+Formateo salida
+    - Format-...  (Format-Table, Format-List, Format-Custom)
+    - ConvertTo-... (ConverTo-XML, ConverTo-Json)
+
+Herramientas 
+    - Chocolately (https://chocolatey.org/)
+
+De 'Programacion" (Los preferidos del profe)
+    Params()
+    Tipos De Dato
+	    1..10    Rango
+            [TipoDeDato]   (Todos los de .NET)
+            [TipoDeDato]::Metodo-Estatico()
+            @{}    HashTable/Diccionario
+            @()    Array
+    Add-Type -AssemblyName System.Windows.Forms
+    (Get-...).GetType()    [Typo]
+    (Get-...)[0]           Si es un Array
+    (Get-...).metodo()     ej:.ToString()
+    Estructuras de Control
+       -if, for, foreach, while
+    > $form = New-Object -TypeName System.Windows.Forms.Form
+    > $form.show()
+    > $form.close()
+    Acceso a Base de Datos	
+
+Manejo de Errores
+   try...catch
+	-$_.Exception
+        -PSItem.InvocationInfo
+        -PSItem.ScriptStackTrace
+   try...finally
+   throw
+  -ErrorAction Stop
+  -ErrorAction Ignore
+  -[void] 
+   
+Firma de Codigo
+  - Certificados (Clave Publica/Privada)
+      - New-SelfSignedCertificate / OpenSSL / MMC 
+      - Export-Certificate
+      - Import-Certificate
+          .cer / crt  (Clave publica)   <<< Usado para validar
+          .pfx1 (Clave publica y privada)  << PELIGROSO!
+  - Cert Store (Personal/CA/Trusted Publishers ) 
+  - Set-ExecutionPolicy 
+      (Relacionado con GPO o $profile)
+  - Set-AuthenticodeSignature  
+
+--------
+Servidor: sensqlsrv01.senado.es
+Instancia: sensql
+Database: GesIP
+User: test
+Pwd: Test
+Tabla: Equipos
+Campos: Hostname, mac, ip
+ 
+$roles = @('WEB','Fileserver')
+ 
+switch ( $roles ) {
+    'Database'   { Write-Host 'Configure SQL' }
+    'WEB'        { Write-Host 'Configure IIS' }
+    'FileServer' { Write-Host 'Configure Share' }
+}
+
+
+$cert = New-SelfSignedCertificate -KeyUsage DigitalSignature -KeySpec Signature -KeyAlgorithm RSA -KeyLength 2048 -DNSName “www.yourdomain.com” -CertStoreLocation Cert:\CurrentUser\My -Type CodeSigningCert -Subject “Your Code Signing Certificate Name”  -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider'
+
+
+Import-Certificate -FilePath C:\Temp\CertificadoFirma.cer -CertStoreLocation Cert:\CurrentUser\TrustedPublisher\             
+Import-Certificate -FilePath C:\Temp\CertificadoFirma.cer -CertStoreLocation Cert:\CurrentUser\TrustedPublisher\     
+
+1-Generate the key:
+
+New-SelfSignedCertificate -DnsName email@yourdomain.com -Type CodeSigning -CertStoreLocation cert:\CurrentUser\My
+ 
+2-Export the certificate without the private key:
+
+Export-Certificate -Cert (Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert)[0] -FilePath code_signing.crt
+ 
+ 
+3-Import it as Trusted Publisher
+
+Import-Certificate -FilePath .\code_signing.crt -Cert Cert:\CurrentUser\TrustedPublisher
+ 
+4-Import it as a Root certificate authority.
+
+Import-Certificate -FilePath .\code_signing.crt -Cert Cert:\CurrentUser\Root
+ 
+5-Sign the script (assuming here it's named script.ps1, fix the path accordingly).
+
+Set-AuthenticodeSignature .\script.ps1 -Certificate (Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert)[0]
+                

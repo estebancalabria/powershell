@@ -1,0 +1,315 @@
+**********************
+PowerShell transcript start
+Start time: 20231130051152
+Username: LAPTOP-SRG2U73H\esteb
+RunAs User: LAPTOP-SRG2U73H\esteb
+Configuration Name: 
+Machine: LAPTOP-SRG2U73H (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -WorkingDirectory ~
+Process ID: 20640
+PSVersion: 7.2.17
+PSEdition: Core
+GitCommitId: 7.2.17
+OS: Microsoft Windows 10.0.22621
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.17
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is comandos.txt
+PS C:\Cursos\Powershell\Senado\clase-cuatro> code .
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> .\Show-ErrorHandling.ps1 .\archivo.txt
+Este es un archivo
+PS C:\Cursos\Powershell\Senado\clase-cuatro> .\Show-ErrorHandling.ps1 .\archivo2.txt
+
+Exception: No se pudo hacer el Get-Content
+
+Exception: No se pudo hacer el Get-Content
+PS C:\Cursos\Powershell\Senado\clase-cuatro> .\Show-ErrorHandling.ps1 .\archivo2.txt
+
+MyCommand             : 
+BoundParameters       : {}
+UnboundArguments      : {}
+ScriptLineNumber      : 16
+OffsetInLine          : 9
+HistoryId             : -1
+ScriptName            : C:\Cursos\Powershell\Senado\clase-cuatro\Show-ErrorHandling.ps1
+Line                  :         throw "No se pudo hacer el Get-Content"
+                        
+PositionMessage       : At C:\Cursos\Powershell\Senado\clase-cuatro\Show-ErrorHandling.ps1:16 char:9
+                        +         throw "No se pudo hacer el Get-Content"
+                        +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PSScriptRoot          : C:\Cursos\Powershell\Senado\clase-cuatro
+PSCommandPath         : C:\Cursos\Powershell\Senado\clase-cuatro\Show-ErrorHandling.ps1
+InvocationName        : 
+PipelineLength        : 0
+PipelinePosition      : 0
+ExpectingInput        : False
+CommandOrigin         : Internal
+DisplayScriptPosition : 
+
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> .\Show-ErrorHandling.ps1 .\archivo2.txt
+
+Write-Error: No se pudo hacer el Get-Content
+
+Write-Error: No se pudo hacer el Get-Content
+PS C:\Cursos\Powershell\Senado\clase-cuatro> $roles = @('WEB','Fileserver')
+PS C:\Cursos\Powershell\Senado\clase-cuatro> switch ( $roles ) {
+    'Database'   { Write-Host 'Configure SQL' }
+    'WEB'        { Write-Host 'Configure IIS' }
+    'FileServer' { Write-Host 'Configure Share' }
+}
+Configure IIS
+Configure Share
+PS C:\Cursos\Powershell\Senado\clase-cuatro> Get-NetIPAddress
+
+IPAddress         : fe80::110a:c069:65b4:d0c8%19
+InterfaceIndex    : 19
+InterfaceAlias    : Local Area Connection* 4
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Deprecated
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : fe80::be59:2915:9be3:9e8d%12
+InterfaceIndex    : 12
+InterfaceAlias    : Local Area Connection* 3
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Deprecated
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : fe80::1a75:643e:5e1a:2cec%11
+InterfaceIndex    : 11
+InterfaceAlias    : Bluetooth Network Connection
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Deprecated
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : fe80::8e3:16cd:74ea:c599%16
+InterfaceIndex    : 16
+InterfaceAlias    : Wi-Fi
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 64
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : ::1
+InterfaceIndex    : 1
+InterfaceAlias    : Loopback Pseudo-Interface 1
+AddressFamily     : IPv6
+Type              : Unicast
+PrefixLength      : 128
+PrefixOrigin      : WellKnown
+SuffixOrigin      : WellKnown
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 169.254.50.179
+InterfaceIndex    : 19
+InterfaceAlias    : Local Area Connection* 4
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 16
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Tentative
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 169.254.154.236
+InterfaceIndex    : 12
+InterfaceAlias    : Local Area Connection* 3
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 16
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Tentative
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 169.254.216.217
+InterfaceIndex    : 11
+InterfaceAlias    : Bluetooth Network Connection
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 16
+PrefixOrigin      : WellKnown
+SuffixOrigin      : Link
+AddressState      : Tentative
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 192.168.0.9
+InterfaceIndex    : 16
+InterfaceAlias    : Wi-Fi
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Dhcp
+SuffixOrigin      : Dhcp
+AddressState      : Preferred
+ValidLifetime     : 00:43:02
+PreferredLifetime : 00:43:02
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+IPAddress         : 127.0.0.1
+InterfaceIndex    : 1
+InterfaceAlias    : Loopback Pseudo-Interface 1
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 8
+PrefixOrigin      : WellKnown
+SuffixOrigin      : WellKnown
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> getmac
+
+Physical Address    Transport Name
+=================== ==========================================================
+64-79-F0-DC-0B-59   \Device\Tcpip_{BFFDAA73-DAA7-495F-829E-A9A409A569AE}
+64-79-F0-DC-0B-5D   Media disconnected
+PS C:\Cursos\Powershell\Senado\clase-cuatro> Get-NetAdapter
+
+Name                      InterfaceDescription                    ifIndex Status       MacAddress             LinkSpeed
+----                      --------------------                    ------- ------       ----------             ---------
+Wi-Fi                     Intel(R) Wi-Fi 6 AX201 160MHz                16 Up           64-79-F0-DC-0B-59     866.7 Mbps
+Bluetooth Network Connec… Bluetooth Device (Personal Area Networ…      11 Disconnected 64-79-F0-DC-0B-5D         3 Mbps
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> .\Select-Table.ps1 -DatabaseName WebApiDemo  -TableName Equipos -Campos hostname,mac,ip
+0
+
+Name                           Value
+----                           -----
+hostname                       localhost
+ip                             192.168.0.9
+mac                            64-79-F0-DC-0B-59
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> .\Select-Table.ps1 -DatabaseName WebApiDemo  -TableName Equipos -Campos hostname,mac,ip
+0
+
+Name                           Value
+----                           -----
+hostname                       localhost
+ip                             192.168.0.9
+mac                            64-79-F0-DC-0B-59
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> Invoke-AsWorkflow
+PS C:\Cursos\Powershell\Senado\clase-cuatro> TerminatingError(Export-PSSession): "Running the Get-Command command in a remote session returned no results."
+
+Invoke-AsWorkflow: The 'Invoke-AsWorkflow' command was found in the module 'PSWorkflowUtility', but the module could not be loaded. For more information, run 'Import-Module PSWorkflowUtility'.
+
+Invoke-AsWorkflow: The 'Invoke-AsWorkflow' command was found in the module 'PSWorkflowUtility', but the module could not be loaded. For more information, run 'Import-Module PSWorkflowUtility'.
+PS C:\Cursos\Powershell\Senado\clase-cuatro> cls
+PS C:\Cursos\Powershell\Senado\clase-cuatro> switch ( $roles ) {
+    'Database'   { Write-Host 'Configure SQL' }
+    'WEB'        { Write-Host 'Configure IIS' }
+    'FileServer' { Write-H
+
+
+
+))
+At line:4 char:18
++     'FileServer' { Write-H
++                  ~
+Missing closing '}' in statement block or type definition.
+
+At line:4 char:27
++     'FileServer' { Write-H
++                           ~
+Missing condition in switch statement clause.
+
+At line:8 char:1
++ ))
++ ~
+Unexpected token ')' in expression or statement.
+
+At line:8 char:2
++ ))
++  ~
+Unexpected token ')' in expression or statement.
+
+ParserError:
+Line |
+   4 |      'FileServer' { Write-H
+     |                   ~
+     | Missing closing '}' in statement block or type definition.
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> dir
+
+    Directory: C:\Cursos\Powershell\Senado\clase-cuatro
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          11/30/2023  6:35 AM             94 archivo.txt
+-a---          11/30/2023  9:28 AM           9845 comandos.txt
+-a---          11/30/2023  5:26 AM            444 Compare-Files.ps1
+-a---          11/30/2023  8:59 AM           1517 Select-Table.ps1
+-a---          11/30/2023  6:45 AM           1805 Show-ErrorHandling.ps1
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> .\Show-Hello.ps1
+Hello
+PS C:\Cursos\Powershell\Senado\clase-cuatro> Get-ExecutionPolicy
+Bypass
+PS C:\Cursos\Powershell\Senado\clase-cuatro> code .
+
+PS C:\Cursos\Powershell\Senado\clase-cuatro> $profile
+C:\Users\esteb\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
+PS C:\Cursos\Powershell\Senado\clase-cuatro> Get-Content $profile
+
+Get-Content: Cannot find path 'C:\Users\esteb\Documents\PowerShell\Microsoft.PowerShell_profile.ps1' because it does not exist.
+
+Get-Content: Cannot find path 'C:\Users\esteb\Documents\PowerShell\Microsoft.PowerShell_profile.ps1' because it does not exist.
+PS C:\Cursos\Powershell\Senado\clase-cuatro> Set-ExecutionPolicy AllSigned
+>> TerminatingError(Set-ExecutionPolicy): "Access to the path 'C:\Program Files\PowerShell\7\powershell.config.json' is denied.
+To change the execution policy for the default (LocalMachine) scope, start PowerShell with the "Run as administrator" option. To change the execution policy for the current user, run "Set-ExecutionPolicy -Scope CurrentUser"."
+
+Set-ExecutionPolicy: Access to the path 'C:\Program Files\PowerShell\7\powershell.config.json' is denied.
+To change the execution policy for the default (LocalMachine) scope, start PowerShell with the "Run as administrator" option. To change the execution policy for the current user, run "Set-ExecutionPolicy -Scope CurrentUser".
+
+Set-ExecutionPolicy: Access to the path 'C:\Program Files\PowerShell\7\powershell.config.json' is denied.
+To change the execution policy for the default (LocalMachine) scope, start PowerShell with the "Run as administrator" option. To change the execution policy for the current user, run "Set-ExecutionPolicy -Scope CurrentUser".
